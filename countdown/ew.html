@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <div class="m">
+        <div id="view">
+            "If at first you don’t succeed, try, try again. W. E. Hickson"
+        </div>
+    </div>
+    
+    <style>
+        body
+        {
+            background-color: black;
+            color: white;
+           
+          
+        }
+        .main{
+            transform: translate(-50%,-50%);
+            left: 50%;
+            position: relative;
+              
+        }
+        
+.box
+{
+    height: 300px; 
+    width: 50%;
+    background: rgba(248, 245, 245, 0.25);
+    box-shadow: 20px 20px 40px -6px rgba(54, 51, 51, 0.2);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    position: absolute;
+   transform: translate(-50%,-50%);
+   top: 50%;
+   left: 50%;
+    bottom: 80%; 
+    z-index: 1;     
+}
+span{
+    position: relative;
+    left: 15%;
+    top: 20%;
+    font-size: 150px;
+  
+}
+ .view
+ {
+    height: 100px;
+    width: 100%;
+ }      
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+    </div>
+
+    <script>
+        let hours = document.getElementById('hrs');
+        let minutes = document.getElementById('min');
+        let seconds = document.getElementById('sec');
+
+       
+        setInterval(() =>{
+        let currentTime = new Date();
+        hours = currentTime.getHours();
+        document.getElementById('hrs').innerHTML = hours;
+        minutes = currentTime.getMinutes();
+        document.getElementById('min').innerHTML = minutes;
+        seconds = currentTime.getSeconds();
+        document.getElementById('sec').innerHTML = seconds;
+        seconds = currentTime.getMinutes
+        
+        
+
+        }, 1000);
+
+
+
+
+
+      
+        let a = [
+
+        
+       "I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.”  ",
+       "Never let the fear of striking out keep you from playing the game.",
+       "Life is like a coin. You can spend it any way you wish, but you only spend it once",
+       "Don’t settle for what life gives you; make life better and build something"
+
+     ];
+    function change()
+    {
+        let view= document.getElementById('view')
+        
+         view.style.color = "white";
+         view.style.fontSize = "40px";
+       
+        view.style.position = "absolute";
+        view.style.top = "75%";
+        view.style.right = "20%";
+
+    
+
+
+
+        let velue=Math.floor(Math.random()*a.length);
+        view.innerHTML=a[velue]
+    }
+  
+    setInterval(change,1000)
+    
+    </script>
+</body>
+</html>
+
+
